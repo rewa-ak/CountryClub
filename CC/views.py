@@ -8,3 +8,5 @@ def home(request):
     
 def user_registration(request):
     return render(request, 'Membership_registration.html')
+
+
