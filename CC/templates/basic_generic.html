@@ -1,0 +1,57 @@
+{% load static %}
+<html>
+    <head>
+        {% block title %}<title>Country Club</title>  {% endblock %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+        {% block style %}  {% endblock %}
+        <script src="https://kit.fontawesome.com/d45f33e614.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- Header Menu of the Page -->
+        <header>
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="{% static 'images/logo.JPG' %}" />
+                </div>   
+                <div id="user">
+                    <i class='fas fa-portrait' style='font-size:700%;color:#112D4E'></i>
+                    {% if user.is_authenticated %}
+                        <h3 color="#112D4E">User:{{ user.get_username }}</h3>
+                        <h3 color="#112D4E"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></h3>
+                    {% else %}
+                        <h3 color="#112D4E"><a href="{% url 'login'%}?next={{request.path}}">Login</a></h3>
+                    <!--    <h3 color="#112D4E"><a href="/CC/signup">Sign up</a> </h3> -->
+                    {% endif %}
+                </div>  
+        </header>
+        <!-- Main content between Header and Footer -->
+        <main style="background-image: url('{% static 'images/wallpaper.JPG'%}');">
+            
+            {% block content %}<!-- default content text (typically empty) -->{% endblock %}
+ 
+        </main>
+        <!-- Footer Menu -->
+        <footer>
+            
+            <div id="links">
+                <h3><a href="/CC/home">Home</a></h3>
+                <h3><a href="/CC/register">Member Registration</a></h3>
+                <h3><a href="/CC/memberinfo">Member Information</a></h3>
+                <h3><a href="/CC/clubcalendar">Club Calender</a></h3>
+                <h3><a href="/CC/Facility reservation">Reserve Facility</a></h3>
+                <h3><a href="/CC/news">Club News</a></h3>
+                <h3><a href="/CC/submit a complaint">Submit A Complaint</a></h3>
+            </div>
+            <div id="contact">
+                <h2>Contact us</h2>
+                <div style="overflow: hidden;">
+                    <a href="https://www.facebook.com/"> <i class="fa fa-facebook-square" style="font-size:36px"></i></a>
+                    <a href="https://www.twitter.com/"><i class="fa fa-twitter" style="font-size:36px"></i></a>
+                    <a href="https://www.instagram.com/"> <i class="fa fa-instagram" style="font-size:36px"></i></a>
+                </div>
+                
+
+            </div>
+        </footer>
+    </body>
+</html>
