@@ -1,0 +1,17 @@
+{% extends "basic_generic.html" %}
+{% load static %}
+<html>
+    <head>
+        {% block title %}<title>Sign Up</title>{% endblock %}
+        {% block style %}<link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        <form method="POST" class="form-group">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Register</button>
+        </form>
+        {% endblock %}
+    </body>
+</html>

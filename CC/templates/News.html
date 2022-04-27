@@ -1,52 +1,28 @@
+{% extends "basic_generic.html" %}
+{% load static %}
 <html>
     <head>
-        <title>Club News</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/news.css">
-        <script src="https://kit.fontawesome.com/d45f33e614.js" crossorigin="anonymous"></script>
+        {% block title %}<title>Club News</title>{% endblock %}
+        {% block style %}<link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
     </head>
     <body>
-        <!-- Header Menu of the Page -->
-        <header>
-                <!-- Logo -->
-                <div class="logo">
-                    <img src="images/logo.JPG" />
-                </div>   
-                <div id="user">
-                    <i class='fas fa-portrait' style='font-size:700%;color:#112D4E'></i>
-                    <h3 color="#112D4E">Username</h3>
-                </div>  
-        </header>
-        <!-- Main content between Header and Footer -->
-        <main style="background-image: url(images/wallpaper.JPG);">
-            <!-- Section 1 of Main content -->
-            <section class="main">
-                
-            </section>
- 
-        </main>
-        <!-- Footer Menu -->
-        <footer>
-            
-            <div id="links">
-                <h3><a href="Home.html">Home</a></h3>
-                <h3><a href="Membership_registration.html">Member Registration</a></h3>
-                <h3><a href="Member_information.html">Member Information</a></h3>
-                <h3><a href="Club_calender.html">Club Calender</a></h3>
-                <h3><a href="Facility_reservation.html">Reserve Facility</a></h3>
-                <h3><a href="News.html">Club News</a></h3>
-                <h3><a href="Complaint.html">Submit A Complaint</a></h3>
-            </div>
-            <div id="contact">
-                <h2>Contact us</h2>
-                <div style="overflow: hidden;">
-                    <a href="https://www.facebook.com/"> <i class="fa fa-facebook-square" style="font-size:36px"></i></a>
-                    <a href="https://www.twitter.com/"><i class="fa fa-twitter" style="font-size:36px"></i></a>
-                    <a href="https://www.instagram.com/"> <i class="fa fa-instagram" style="font-size:36px"></i></a>
-                </div>
-                
+        {% block content %}
+        <div style="overflow: hidden;">
+            <img class="newseason1" src="images/new-season-pic.JPG">
+            <img class="newseason" src="images/new-season-pic.JPG">
+            <img class="newseason2" src="images/new-season-pic.JPG">
 
-            </div>
-        </footer>
+
+        </div>
+        <div style="overflow: hidden;">
+            <img class="newseason3" src="images/new-season-pic.JPG">
+          <img class="newseason4" src="images/new-season-pic.JPG">
+          <img class="newseason5" src="images/new-season-pic.JPG">
+        </div>
+
+        </section>
+
+
+        {% endblock %}
     </body>
 </html>

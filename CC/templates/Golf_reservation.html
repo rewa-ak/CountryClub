@@ -1,0 +1,42 @@
+{% extends "basic_generic.html" %}
+{% load static %}
+<html>
+    <head>
+        {% block title %}<title>Golf reservation</title>{% endblock %}
+        {% block style %}<link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        <h1 style="text-align: center;font-family: 'Trebuchet MS', sans-serif; color:white; font-size:40px;">Golf Courts</h1> 
+                    <style>
+                        table, th, td {
+                          border:1px solid black;
+                        }
+                        </style>
+                        
+                       
+                        <table style="position:relative; left:300px; top:150px; width:30%">
+                          <tr>
+                            <td style="height:100px ;color:white; font-size:20px;"><button type="button" onclick="window.location.href='images/golf_court1.JPG'"></button>Golf Court 1</td>
+                            <td style= "color:white;font-size:20px;">Available</td>
+                            
+                          </tr>
+                          <tr>
+                            <td style="height:100px;color:white;font-size:20px;"><button type="button" onclick="window.location.href='images/golf_court2.JPG'"></button>Golf Court 2</td>
+                            <td style= "color:white;font-size:20px;">Available</td>
+                    
+                          </tr>
+                          <tr style="height:20%">
+                            <td style="height:100px;color:black;font-size:20px;"><button type="button" onclick="window.location.href='images/golf_court3.JPG'"></button>Gold Court 3</td>
+                            <td style= "color:white;font-size:20px;">Not Available</td>
+                           
+                          </tr>
+                        </table>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit">Submit</button>
+                        </form>
+        {% endblock %}
+    </body>
+</html>
