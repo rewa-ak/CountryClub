@@ -12,7 +12,10 @@ urlpatterns = [
     path('news/', views.news),
     path('tennis_reservation/', views.tennis_reservation),
     path('golf_reservation/', views.golf_reservation),
-    path('Sign up/',views.signup)
-
-    
+    path('Sign up/',views.signup),
+    path('MemberUpdate/', views.MemberUpdate),
+    path('MemberDelete/', views.MemberDelete),
+    path('ReservationUpdate/<int:id>', views.ReservationUpdate, name='ReservationUpdate'),
+    path('ReservationDelete/<int:id>', views.ReservationDelete, name='ReservationDelete')
 ]
+

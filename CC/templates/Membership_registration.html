@@ -7,11 +7,16 @@
     </head>
     <body>
         {% block content %}
+        {% if register %}
+            <h1>{{message}}</h1>
+            <h3>View your membership information here: <a href="/CC/memberinfo">Member Information</a></h3>
+        {% else %}
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Submit</button>
         </form>
+        {% endif %}
         {% endblock %}
     </body>
 </html>

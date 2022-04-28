@@ -1,0 +1,22 @@
+{% extends "basic_generic.html" %}
+{% load static %}
+<html>
+    <head>
+        {% block title %}<title>Member Update</title>{% endblock %}
+        
+    </head>
+    <body>
+        {% block content %}
+        {% if success %}
+        <h3>Information updated successflly</h3>
+        <h3>Go back to <a href="/CC/memberinfo">Member Information Page</a></h3>
+        {% else %}
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update</button>
+        </form>
+        {% endif %}
+        {% endblock %}
+    </body>
+</html>

@@ -7,6 +7,22 @@
     </head>
     <body>
         {% block content %}
+        
+        <h1>Your reservations </h1>
+        {% for i in details %}
+                <tr>
+                    <td style="padding:10px;">{{i.Reserved_date}}</td>
+                    <td style="padding:10px;">{{i.Reserved_time_start}}</td>
+                    
+                    <td style="padding:10px;">{{i.Facility}}</td>
+                    <td style="padding:10px;">{{i.Court_number}}</td>
+                    <td style="padding:10px;"><a href="{% url 'ReservationUpdate' i.id %}">Edit</a></td>
+                    <td style="padding:10px;"><a href="{% url 'ReservationDelete' i.id %}">Delete</a></td>
+                </tr>
+                <br><br>
+                {% endfor %}
+       
+
         <h1 style="text-align: center; font-size:40 ; font-family: 'Trebuchet MS', sans-serif;">Reserve A Court</h1> 
         <div class="tennis">
                 <img src="{% static 'images/tennis.JPG' %}"  width=22%; height=25% style = "position:relative; left:300px; top:250px;"/>

@@ -1,0 +1,24 @@
+{% extends "basic_generic.html" %}
+{% load static %}
+<html>
+    <head>
+        {% block title %}<title>Reservation delete</title>{% endblock %}
+        
+    </head>
+    <body>
+        {% block content %}
+        {% if success %}
+        <h3>Reservation successfully deleted</h3>
+        <h3>Head back <a href="/CC/">Home</a></h3>
+        {% else %}
+        <form method="post">
+        {% csrf_token %}
+        <h3>Are you sure you want to delete your reservation?</h3>
+        <button type="Submit"> Yes</button>
+        </form>
+        <h3>Go back to <a href="/CC/Facility reservation">Reservation reservation</a> </h3>
+        {% endif %}
+        {% endblock %}
+        
+    </body>
+</html>

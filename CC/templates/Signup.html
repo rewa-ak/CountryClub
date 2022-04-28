@@ -7,11 +7,16 @@
     </head>
     <body>
         {% block content %}
+        {% if signup %}
+        <h1> Sign up success, please proceed to the home page</h1>
+        <h3><a href="/CC/home">Home</a></h3>
+        {% else %}
         <form method="POST" class="form-group">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn btn-success">Register</button>
         </form>
+        {% endif %}
         {% endblock %}
     </body>
 </html>

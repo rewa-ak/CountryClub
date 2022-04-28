@@ -8,19 +8,20 @@
     <body>
         {% block content %}
         <div style="overflow: hidden;">
-            <img class="newseason1" src="images/new-season-pic.JPG">
-            <img class="newseason" src="images/new-season-pic.JPG">
-            <img class="newseason2" src="images/new-season-pic.JPG">
+            <img class="newseason1" src="{% static 'images/new-season-pic.JPG' %}">
+            <img class="newseason" src="{% static 'images/new-season-pic.JPG' %}">
+            <img class="newseason2" src="{% static 'images/new-season-pic.JPG' %}">
 
 
         </div>
         <div style="overflow: hidden;">
-            <img class="newseason3" src="images/new-season-pic.JPG">
-          <img class="newseason4" src="images/new-season-pic.JPG">
-          <img class="newseason5" src="images/new-season-pic.JPG">
+            <img class="newseason3" src="{% static 'images/new-season-pic.JPG' %}">
+          <img class="newseason4" src="{% static 'images/new-season-pic.JPG' %}">
+          <img class="newseason5" src="{% static 'images/new-season-pic.JPG' %}">
         </div>
 
         </section>
+       
 
 
         {% endblock %}

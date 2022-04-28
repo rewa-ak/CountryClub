@@ -1,0 +1,23 @@
+{% extends "basic_generic.html" %}
+{% load static %}
+<html>
+    <head>
+        {% block title %}<title>Member Delete</title>{% endblock %}
+        
+    </head>
+    <body>
+        {% block content %}
+        {% if success %}
+        <h3>Membership successfully deleted</h3>
+        <h3>Head back <a href="/CC/">Home</a></h3>
+        {% else %}
+        <form method="post">
+        {% csrf_token %}
+        <h3>Are you sure you want to delete your membership?</h3>
+        <button type="Submit"> Yes</button>
+        </form>
+        <h3>Go back to <a href="/CC/memberinfo">Membership information</a> </h3>
+        {% endif %}
+        {% endblock %}
+    </body>
+</html>
